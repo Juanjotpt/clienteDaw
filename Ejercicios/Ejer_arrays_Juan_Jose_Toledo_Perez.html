@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Jose Toledo Perez">
+    <title>Título de la página</title>
+</head>
+<body>
+    <script>
+
+const frase1="Castilla : Valladolid Burgos Leon Palencia";
+const frase2="Valencia : Valencia Alicante";
+const frase3=" Andalucia : Sevilla Córdoba Almería";
+
+let recorreFrase = (frase) => frase.split(", ").map((palabra) => palabra.toString()).join(",");
+
+document.write(recorreFrase(frase1));
+
+//document.write(recorreFrase(frase2));
+//document.write(recorreFrase(frase3));
+
+let filtraLetra=(frase) => frase.split(" ").filter((palabra => palabra.includes("V","C")));
+
+//document.write(filtraLetra(frase1));
+//document.write(filtraLetra(frase2));
+//document.write(filtraLetra(frase3));
+
+
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+       
+        let lineas = prompt("Introduce el número de filas:");
+        let columnas = prompt("Introduce el número de columnas:");
+
+     
+       
+            
+            document.write("<table border='1'>");
+            for (let i = 0; i < lineas; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < columnas; j++) {
+                    document.write("<td>" + (i + lineas) + "," + (j + columnas) + "</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        
+    </script>
+    
+</body>
+</html>
