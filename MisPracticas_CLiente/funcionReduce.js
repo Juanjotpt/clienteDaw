@@ -6,9 +6,10 @@ let suma = numeros.reduce(function (acu, ele) {
 console.log(suma);
 
 //Devolvemos la suma de todos los elementos en el acumulador.
+//terminamos con , 0 para que empiece por el primer indice del array.
 let suma1 = numeros.reduce(function (acu, ele, ind) {
   return acu + ele;
-});
+},0);
 console.log(suma1);
 //devolvemos el indice.
 let suma2 = numeros.reduce(function (acu, ele, ind) {

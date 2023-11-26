@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <h1>Hacer click sobre un párrafo , éste debe situase como el primero</h1>
+      <hr />
+      <p onclick="cambiarParrafo(this)">Parrafo1</p>
+      <p onclick="cambiarParrafo(this)">Parrafo2</p>
+      <p onclick="cambiarParrafo(this)">Parrafo3</p>
+      <p onclick="cambiarParrafo(this)">Parrafo4</p>
+      <p onclick="cambiarParrafo(this)">Parrafo5</p>
+
+      <script type="text/javascript">
+        function cambiarParrafo(parrafo) {
+          let nodo1 = document.children[0].children[1].children[2];
+          let nodos = document.getElementsByTagName("p");
+          let nodoS = parrafo.nextElementSibling;
+          let nodoA = parrafo.previousElementSibling;
+          nodo1.textContent = parrafo.textContent;
+          for (let i = 0; i < nodos.length; i++) {
+            if (parrafo.previousElementSibling != parrafo.nextElementSibling) {
+              
+            }
+          }
+          console.log(nodoS.textContent);
+          console.log(nodoA.textContent);
+          console.log(nodo1.textContent);
+        }
+      </script>
+    </body>
+  </body>
+</html>

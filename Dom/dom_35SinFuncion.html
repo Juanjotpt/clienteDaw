@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>dom_35 - Ejercicio: Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al final de los párrafos</title>
+	</head>
+	<body>
+		<h1>dom_35 - Ejercicio: Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al final de los párrafos</h1>
+		<hr />
+		<p id="parrafo1" onclick="clonar(this);">Primer párrafo</p>
+		<p id="parrafo2" onclick="clonar(this);">Segundo párrafo</p>
+		<p id="parrafo3" onclick="clonar(this);">Tercer párrafo</p>
+	</body>
+</html>
+
+		<script type="text/javascript">
+
+			var principio = true;
+			
+			function clonar(parrafo) {
+				//Clonamos el nodo
+			let miParrafo= parrafo.cloneNode(true);
+			if(principio){
+				//Si es anterior le ponemos el hijo antes.
+				parrafo.parentNode.insertBefore(miParrafo, parrafo.parentNode.firstChild);
+			}else{
+				//le agregamos miParrafo a parrafo.
+				parrafo.parentNode.appendChild(miParrafo);
+			}
+			principio=!principio;
+			}
+
+		</script>

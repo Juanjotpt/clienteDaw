@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Jose Toledo Perez" />
+    <title>Título de la página</title>
+  </head>
+  <body>
+    <div id="id0">
+      Esto es un contenedor
+      <a href="http://uno.com">uno</a>
+      <div id="id1">
+        Esto es un bloque
+        <a href="http://dos.com">dos</a>
+        <input name="prueba1" />
+        <input name="prueba2" />
+      </div>
+    </div>
+    <script>
+      let elemento = document.getElementsByTagName("div");
+      console.log(elemento);
+      elemento = document.getElementById("id0");
+      console.log(elemento);
+      misDivs = document.getElementsByTagName("div");
+      
+     
+      console.log(document.getElementById("id1"));
+
+      //Con getElementsByTagName conseguimos todos los elementos div.
+      //Despues iteramos por ellos consiguiendo el id y texto de cada uno.
+      let divs = document.getElementsByTagName("div");
+      for (let i = 0; i < divs.length; i++) {
+        console.log(`El id es ${divs[i].id} y el texto ${divs[i].textContent}`);
+      }
+      //Hacemos lo mismo pero con los elemento a y href.
+      let urls = document.getElementsByTagName("a");
+      for (let i = 0; i < urls.length; i++) {
+        console.log(`Las url son ${urls[i].href}`);
+      }
+
+      //Creamos la funcion dejando como parametro un nodo
+      function verNodos(nodo) {
+        //Recorremos sobre los hijos del nodo que metamos como parametro y los metemos en la variable nodoHijo.
+        for (let i = 0; i < nodo.childNodes.length; i++) {
+          let nodoHijo = nodo.childNodes[i];
+          //Si el nodohijo es de tipo 1 ( Elemento)
+          if (nodoHijo.nodeType === 1) {
+            console.log(`${nodoHijo} es un nodo de tipo elemento`);
+            //Si el nodoHijo es de tipo 3 (texto);
+          } else if (nodoHijo.nodeType === 3) {
+            console.log(
+              `${nodoHijo} es de tipo texto y su texto es ${nodoHijo.textContent}`
+            );
+          }
+        }
+      }
+
+      verNodos(document.getElementById("id0"));
+    </script>
+  </body>
+</html>

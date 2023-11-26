@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Jose Toledo Perez" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="id0"></div>
+
+    <script>
+      /*
+      const miUrl = document.createElement("a");
+      miUrl.setAttribute("href", "https://www.google.es");
+      miUrl.textContent="A google";
+      document.body.appendChild(miUrl);
+      */
+
+      //getElementById para obtener el elemento.
+      const donde = document.getElementById("id0");
+      //CreateElement creamos la lista desordenada
+      const ul = document.createElement("ul");
+      //append (agregarmos la lista a la variable donde )
+      donde.append(ul);
+      //array de enlaces
+      const enlaces = [
+        "https://www.elpais.es",
+        "https://stackoverflow.com",
+        "https://www.diariopalentino.es",
+      ];
+      //recorremos cada enlace  y creamos un elemento li para la lista y para cada enlace
+      enlaces.forEach((enlace) => {
+        const li = document.createElement("li");
+        //Igual que con append ul pero lo hacemos con li a ul.
+        ul.appendChild(li);
+        //Creamaos los elementos a para cada enlace.
+        const a = document.createElement("a");
+        //set para agregar el atributo href.
+        a.setAttribute("href", enlace);
+        a.textContent = enlace;
+
+        li.appendChild(a);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Jose Toledo Perez" />
+    <title>Título de la página</title>
+  </head>
+  <body>
+    <div id="principal" style="border:solid 1px black;
+height:300px; width:700px; margin: 0 auto; background:orange;">
+</div>
+
+    <script>
+      //matriz de mensajes.
+      const mensajes = [
+        "Tomate una sidra El manzanal",
+        "Pepinillos Perico Perico Perez",
+        "Pepedona tu mejor supermercado",
+        "La gente feliz toma loca-loca",
+        "Ofertón de jabón 10 por 2",
+        "Tu mejor coche es un haiga",
+      ];
+
+      function eliminar() {
+        const principal = document.getElementById("principal");
+        principal.remove;
+      }
+
+      function capas() {
+        const principal = document.getElementById("principal");
+        //recorremos los mensajes y por cada uno creamos un div con su mensaje gracias a texcontent.
+        for (let i = 0; i < mensajes.length; i++) {
+          let mensaje = document.createElement("div");
+          mensaje.className = "mensaje";
+          mensaje.textContent = mensajes[i];
+          //Agregamos cada mensaje.
+          principal.appendChild(mensaje);
+        }
+      }
+
+      setInterval(function () {
+        eliminar();
+        capas();
+      }, 1000);
+
+      capas();
+
+    </script>
+  </body>
+</html>

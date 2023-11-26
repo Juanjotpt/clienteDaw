@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Seguir el movimiento del ratón</title>
+    <style>
+      #reloj {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="reloj" src="descargar.jpg" width="100" height="100" />
+    <script>
+      const reloj = document.getElementById("reloj");
+      document.addEventListener("mousemove", (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        reloj.style.left = x + "px";
+        reloj.style.top = y + "px";
+      });
+      document.addEventListener("click", (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        const asterisco = document.createElement("div");
+        asterisco.innerHTML = "*";
+        asterisco.style.position = "absolute";
+        asterisco.style.left = x + "px";
+        asterisco.style.top = y + "px";
+        document.body.appendChild(asterisco);
+      });
+    </script>
+  </body>
+</html>

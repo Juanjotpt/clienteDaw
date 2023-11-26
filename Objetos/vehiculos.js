@@ -1,3 +1,6 @@
+
+
+
 class Vehiculo {
   constructor(pasajeros) {
     this.pasajeros = pasajeros;
@@ -36,7 +39,7 @@ class Turismo extends Vehiculo {
   }
 }
 console.log(Turismo);
-
+//Conseguimos horas,minutos y segundoscon fecha.get...
 function capturaReloj() {
   let fecha = new Date();
   let hora = fecha.getHours();
@@ -61,16 +64,42 @@ function generarVehiculos() {
 
     let turismo = new Turismo(pasajeros, color);
     misVehiculos.push(turismo);
-
   }
-     numero = Math.floor(Math.random() * 4) + 1;
+  numero = Math.floor(Math.random() * 4) + 1;
   for (let i = 0; i < numero; i++) {
     let pasajeros = Math.floor(Math.random() * 7) + 1;
     let taraRandom = Math.floor(Math.random() * 10000);
-    let camion= new Camion(pasajeros, taraRandom);
+    let camion = new Camion(pasajeros, taraRandom);
     misVehiculos.push(camion);
   }
   console.log(misVehiculos);
 }
 
+
 generarVehiculos();
+
+
+ function generarTabla(){
+  let lineas = 1;
+  let columnas = 1;
+
+
+ 
+      
+      document.write("<table border='1'>");
+      for (let i = 0; i < lineas; i++) {
+          document.write("<tr>");
+          for (let j = 0; j < columnas; j++) {
+            if(vehiculo instanceof(Camion)){
+              document.write("<td>" + (i + lineas) + "," + (j + columnas) + "</td>");
+          }else if(vehiculo instanceof(Turismo)){
+
+          }
+          document.write("</tr>");
+      }
+      document.write("</table>");
+  
+    
+
+    }
+ }
